@@ -1,0 +1,24 @@
+# Compiled files
+*.class
+*.o
+*.pyc
+*.pyo
+*.dll
+*.exe
+
+# Dependency directories
+/node_modules/
+/bower_components/
+
+# Build output
+/dist/
+/build/
+/out/
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Operating System files
+Thumbs.db
+.DS_Store

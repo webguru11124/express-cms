@@ -1,6 +1,6 @@
 import authController from "../controllers/auth.controller";
 import AuthMiddleware from "../middleware/auth";
-import Vendors from "../controllers/vendors.controller.";
+import Vendors from "../controllers/vendors";
 
 import { Request, Response, Router, NextFunction } from "express";
 //all here are examples on how they should know they have access

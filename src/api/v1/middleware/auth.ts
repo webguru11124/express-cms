@@ -2,7 +2,7 @@ import { NextFunction, Response, Request } from "express";
 
 import RedisClient from "../config/redis";
 import { Token } from "../models/token.model";
-import { userOrgAccess } from "../models/user_org_access.model";
+import { userOrgAccess } from "../models/user_org_access"
 
 function extractToken(req: Request): string | null {
   if (

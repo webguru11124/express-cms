@@ -5,7 +5,7 @@ import rateLimit from "express-rate-limit";
 import http from "http";
 import { ErrorHandler } from "./src/api/v1/middleware/errorHandler";
 import { ipMiddleware } from "./src/api/v1/middleware/ip";
-import RedisClient from "./src/api/v1/common/redis";
+import RedisClient from "./src/api/v1/config/redis";
 import path from "path";
 import bodyParser from "body-parser";
 import { logger } from "./src/api/v1/middleware/logger";

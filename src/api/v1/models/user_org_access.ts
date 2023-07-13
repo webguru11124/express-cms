@@ -1,12 +1,13 @@
 import { mysqlQuery } from "../config/queries";
 import { get_user_role_admin } from "./queries/org_users.query";
+import { UserOrganizationID } from "./queries/type";
 import {
   create_access,
   get_user_access,
   create_multiple
 } from './queries/user_org_access'
 
-export const tables_id:any = {
+export const tables_id: any = {
   vendor: "1",
   customer: "2",
   forwarder: "3",
@@ -29,8 +30,19 @@ export const tables_id:any = {
     }
  * 
  */
-const reducedArray = (arr: any) =>
-  arr.reduce((tmpGroupedObject, item) => {
+type Item = {
+  orginization_id: number,
+  table_id: number,
+  access: number,
+}
+type GroupedObject = {
+  [id: number]: [{
+    table: number;
+  }]
+}
+
+const reducedArray = (arr: [Item]) =>
+  arr.reduce<GroupedObject>((tmpGroupedObject, item: Item) => {
     if (tmpGroupedObject[item.orginization_id]) {
       const index = tmpGroupedObject[item.orginization_id].findIndex(
         (d) => d.table == item.table_id
@@ -75,7 +87,7 @@ const dummny_data = [
 ];
 
 export const userOrgAccess: any = {
-  create_multiple: async ({ user_id, orginization_id, data }: any) => {
+  create_multiple: async ({ user_id, orginization_id, data }: UserOrganizationID) => {
     //data here will be similar to dummy_data
     let Values: any = [];
     let throwErr = false;

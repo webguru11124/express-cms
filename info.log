@@ -1,0 +1,4 @@
+{"level":"info","message":"Server is running on port 8080","service":"backend"}
+{"level":"error","message":"{\"errno\":-4078,\"code\":\"ECONNREFUSED\",\"syscall\":\"connect\",\"address\":\"127.0.0.1\",\"port\":6379}","service":"backend"}
+{"level":"info","message":"Server is running on port 8080","service":"backend"}
+{"level":"error","message":"{\"errno\":-4078,\"code\":\"ECONNREFUSED\",\"syscall\":\"connect\",\"address\":\"127.0.0.1\",\"port\":6379}","service":"backend"}

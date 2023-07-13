@@ -22,6 +22,13 @@ const Token = {
     const Result = await mysqlQuery.create(tokecCreateQuery, Values);
     return Result;
   },
+
+  async get_one_admin(token: string) {
+    const Values = [token];
+    const Result = mysqlQuery.get_one(getOneAdmin, Values);
+    return Result;
+  },
+
   async get_one(token: string) {
     const Values = [token];
     const Result = mysqlQuery.get_one(tokenGetOne, Values);
@@ -59,7 +66,7 @@ const Token = {
     return [null, "Token not match"];
   },
   async match({ device_id, token, ip }: any): Promise<returnTypes> {
-    const [Token, error] = await this.getOne(token);
+    const [Token, error] = await this.get_one(token);
     if (error) {
       return [null, error];
     }
