@@ -1,6 +1,12 @@
 import { mysqlQuery } from "../config/queries";
 import { get_user_role_admin } from "./queries/org_users.query";
-export const tables_id = {
+import {
+  create_access,
+  get_user_access,
+  create_multiple
+} from './queries/user_org_access'
+
+export const tables_id:any = {
   vendor: "1",
   customer: "2",
   forwarder: "3",
@@ -84,7 +90,7 @@ export const userOrgAccess: any = {
           Values.push(
             user_id,
             orginization_id,
-            tables_id[inner_data.write],
+            tables_id[inner_data.table],
             inner_data.write ? 1 : 2
           );
         } else {
